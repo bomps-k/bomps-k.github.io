@@ -19,7 +19,7 @@
             <div class="min-h-[400px] flex items-center justify-center">
                 <div class="text-center p-8">
                     <h1 class="text-5xl font-bold mb-4">Floppy Bird</h1>
-                    <p class="text-xl mb-8">A modern take on the classic Flappy Bird game built with C</p>
+                    <p class="text-xl mb-8">A modern take on the classic Flappy Bird game built with HTML5, CSS3, and JavaScript</p>
 </div>
             </div>
         </section>
@@ -32,7 +32,7 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-bold mb-4">Description</h3>
                     <p class="text-gray-300 mb-4">
-                        Floppy Bird is a browser-based game inspired by the popular Flappy Bird. The project demonstrates core C concepts including:
+                        Floppy Bird is a browser-based game inspired by the popular Flappy Bird. The project demonstrates core JavaScript concepts including:
                         <ul class="list-disc pl-6 text-gray-300 mb-4">
                             <li>Game loop implementation using requestAnimationFrame</li>
                             <li>Collision detection algorithms</li>
@@ -49,40 +49,26 @@
                         <iframe class="w-full h-96 rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <!-- Source Code Section -->
+                <!-- WebAssembly Section -->
                 <div class="mb-8 bg-gray-700 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-4">Source Code</h3>
-                    <div class="bg-gray-900 p-4 rounded-lg mb-4 overflow-x-auto">
-                        <pre class="text-gray-300 font-mono text-sm"><code>// Sample code snippet
-function flappyBird() {
-  const bird = document.getElementById('bird');
-  let gravity = 0.25;
-  let position = 250;
-  let velocity = 0;
-  
-  function gameLoop() {
-    velocity += gravity;
-    position += velocity;
-    bird.style.top = position + 'px';
-    requestAnimationFrame(gameLoop);
-  }
-  gameLoop();
-  
-  document.addEventListener('keydown', function(e) {
-    if (e.code === 'Space') {
-      velocity = -5;
-    }
-  });
-}</code></pre>
+                    <h3 class="text-xl font-bold mb-4">Floppy Bird Game</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-300 mb-4">
+                            This version uses WebAssembly compiled from C source code for optimal performance.
+                        </p>
+                        <div id="wasm-game-container" class="bg-black rounded-lg p-4 flex justify-center">
+                            <canvas id="wasm-canvas" width="1280" height="720" class="border border-gray-600"></canvas>
+</div>
                     </div>
+<div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://github.com/67070136/Floppy-Bird" 
-target="_blank" 
-                       class="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition">
-<i data-feather="github" class="mr-2"></i> View Full Code on GitHub
-                    </a>
+                           target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition">
+                            <i data-feather="github" class="mr-2"></i> Source Code
+                        </a>
+</div>
                 </div>
-
-                <div class="mb-8">
+<div class="mb-8">
 <h3 class="text-xl font-bold mb-4">Team Members</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="text-center">
@@ -121,7 +107,6 @@ class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-whi
     <script src="components/footer.js"></script>
     <script>
         feather.replace();
-    </script>
+</script>
 </body>
-
 </html>
