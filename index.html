@@ -7,8 +7,18 @@
     <title>CodeCanvas Showcase - Project Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.tailwindcss.com">
+        document.addEventListener('DOMContentLoaded', function() {
+            const youtubeButtons = document.querySelectorAll('[data-feather="youtube"]');
+            youtubeButtons.forEach(button => {
+                feather.replace({
+                    'width': 16,
+                    'height': 16
+                }, button);
+            });
+        });
+    </script>
+<script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="bg-gray-900 text-white">
     <custom-navbar></custom-navbar>
@@ -46,7 +56,16 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-bold mb-4">Demo Video</h3>
                     <div class="aspect-w-16 aspect-h-9">
-                    <iframe class="w-3/4 h-[500px] mx-auto rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=54_RPQaYZLkilOYj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="w-3/4 mx-auto rounded-lg bg-black overflow-hidden">
+                        <div class="aspect-w-16 aspect-h-9">
+                            <iframe class="w-full h-[500px]" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=54_RPQaYZLkilOYj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg flex items-center transition-all">
+                            <i data-feather="youtube" class="mr-2"></i> Watch on YouTube
+                        </a>
+                    </div>
 </div>
                 </div>
                 <!-- WebAssembly Section -->
@@ -106,7 +125,12 @@ class="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-whi
     <script src="components/navbar.js"></script>
     <script src="components/footer.js"></script>
     <script>
-        feather.replace();
+        feather.replace({
+            'width': 20,
+            'height': 20
+        });
 </script>
 </body>
 </html>
+</html>
+
