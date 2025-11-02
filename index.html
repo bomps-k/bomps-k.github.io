@@ -104,6 +104,18 @@
                     </p>
                     <div id="wasm-game-container" class="bg-black rounded-lg p-4 flex justify-center">
                         <canvas id="wasm-canvas" width="1280" height="720" class="border border-gray-600"></canvas>
+                        <!-- โหลด WebAssembly ของ Floppy Bird -->
+                        <script src="beta.js"></script>
+                        <script>
+                            Module = {
+                                canvas: document.getElementById('wasm-canvas'),
+                                onRuntimeInitialized: function() {
+                                    console.log("WASM ready!");
+                                },
+                                print: (text) => console.log(text),
+                                printErr: (text) => console.error(text),
+                            };
+                        </script>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 mt-4">
                         <a href="https://github.com/67070136/Floppy-Bird" 
@@ -173,6 +185,7 @@
     </script>
 </body>
 </html>
+
 
 
 
